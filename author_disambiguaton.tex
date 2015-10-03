@@ -1113,7 +1113,7 @@ Combined best settings & 0.9954 & 0.9805 & \textbf{0.9879} \\
 respect to a baseline solution using the following combination of components:
 \begin{itemize}
 \item Blocking: same surname and the same first given name initial strategy (SFI);
-\item Linkage function: all 15 features defined in Table~\ref{table:features},
+\item Linkage function: all 22 features defined in Table~\ref{table:features},
     gradient boosted regression trees as supervised learning algorithm
     and a training set of pairs built from $({\cal S}_\text{train}^\prime, {\cal C}_\text{train}^\prime)$, by balancing easy and difficult cases.
 \item Clustering: agglomerative clustering using average linkage and
@@ -1121,12 +1121,13 @@ respect to a baseline solution using the following combination of components:
 \end{itemize}
 
 
-\textit{Blocking.} The good precision of the baseline ($0.9948$), but its
-lower recall ($0.9738$) suggest that the blocking strategy might be the
+\textit{Blocking.} The good precision of the baseline ($0.9901$), but its
+lower recall ($0.9760$) suggest that the blocking strategy might be the
 limiting factor to further overall improvements.
-As shown in Table~\ref{table:blocking}, the maximum recall (\ie, if within a block, all signatures were clustered optimally) for SFI is $0.9776$.
+As shown in Table~\ref{table:blocking}, the maximum recall (\ie, if within a block, all signatures were clustered optimally) for SFI is $0.9828$.
 At the price of fewer and therefore slightly larger blocks (as reported in the right column of Table~\ref{table:blocking}), the
-proposed phonetic-based blocking strategies show better maximum recall ($0.9862$ in average), thereby pushing further the upper bound on the maximum
+proposed phonetic-based blocking strategies show better maximum recall (all
+around $0.9905$), thereby pushing further the upper bound on the maximum
 performance of author disambiguation.
 Let us remind however that the reported maximum recalls for the blocking strategies using phonetization are
 also raised due to the better handling of multiple surnames, as described in Section \ref{methods:blocking}.
@@ -1134,7 +1135,7 @@ also raised due to the better handling of multiple surnames, as described in Sec
 As Table~\ref{table:results} shows, switching to either Double metaphone or NYSIIS phonetic-based blocking allows
 to improve the overall F-measure score, trading precision for recall.
 In particular, the NYSIIS-based phonetic blocking shows to be the most effective when applied
-to the baseline (with an F-measure of $0.9875$) while also being the most
+to the baseline (with an F-measure of $0.9850$) while also being the most
 efficient computationally (with 10857 blocks versus 12978 for the baseline).
 
 Finally, let us also note that Table~\ref{table:blocking} corroborates the
@@ -1142,18 +1143,18 @@ estimation of \cite{torvik2009author}, stating that SFI blocking has a recall
 around $98\%$ on real data.
 
 \begin{table}
-\caption{Maximum recall $R_\text{pairwise}^*$ of blocking strategies, and their number of blocks on ${\cal S}^\prime$.}
+\caption{Maximum recall $R_\text{B3}^*$ and $R_\text{pairwise}^*$ of blocking strategies, and their number of blocks on ${\cal S}^\prime$.}
 \label{table:blocking}
 \centering
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{|l|cc|c|}
   \hline
-  \textbf{Blocking} & $R_\text{pairwise}^*$ & \# blocks \\
+  \textbf{Blocking} & $R_\text{B3}^*$ & $R_\text{pairwise}^*$ & \# blocks \\
   \hline
   \hline
-    SFI & 0.9776 & 12978 \\
-    Double metaphone & 0.9863 & 9753 \\
-    NYSIIS & 0.9861 & 10857 \\
-    Soundex & 0.9863 & 9403 \\
+    SFI & 0.9828 & 0.9776 & 12978 \\
+    Double metaphone & 0.9907 & 0.9863 & 9753 \\
+    NYSIIS & 0.9902 & 0.9861 & 10857 \\
+    Soundex & 0.9906 & 0.9863 & 9403 \\
   \hline
 \end{tabular}
 \end{table}
@@ -1163,14 +1164,14 @@ around $98\%$ on real data.
 \textit{Name normalization.} As discussed previously, the seemingly insignificant step of
 normalizing author names (stripping accents, removing affixes), as performed in the
 baseline, is shown to be important. Results from Table~\ref{table:results} clearly suggest that not
-normalizing significantly reduces performance (yielding an F-measure of $0.9842$ when normalizing,
-but decreasing to $0.9793$ when raw author name strings are used instead).
+normalizing significantly reduces performance (yielding an F-measure of $0.9830$ when normalizing,
+but decreasing to $0.9791$ when raw author name strings are used instead).
 
 \textit{Linkage function.} Let us first comment on the results regarding the
 supervised algorithm used to learn the linkage function.
-As Table~\ref{table:results} indicates, both tree-based algorithms ($0.9842$ for GBRT
-and $0.9854$ for Random Forests) appear to be
-significantly better fit than Linear Regression ($0.9643$). This result is
+As Table~\ref{table:results} indicates, both tree-based algorithms appear to be
+significantly better fit than Linear Regression ($0.9830$ and $0.9846$ for GBRT
+and Random Forests versus $0.9666$ for Linear Regression). This result is
 consistent with \cite{treeratpituk2009disambiguating} which evaluated the use of
 Random Forests for author disambiguation, but contradicts results of
 \cite{levin2012citation} for which Logistic Regression appeared to be the best
@@ -1185,11 +1186,46 @@ signatures from which to learn a linkage function yields a significant
 improvement.
 A random sampling of positive and negative pairs, without taking
 blocking into account, significantly impacts the overall performance
-($0.9692$). When pairs are drawn only fom blocks, performance increases
-($0.9778$), which confirms our intuition that $d$ should be built only from
+($0.9711$). When pairs are drawn only from blocks, performance increases
+($0.9786$), which confirms our intuition that $d$ should be built only from
 pairs it will be used to eventually cluster. Finally, making the classification
 problem more difficult by oversampling complex cases proves to be relevant,
-by further improving the disambiguation results ($0.9842$).
+by further improving the disambiguation results ($0.9830$).
+
+\begin{figure}
+\centering
+\caption{Recursive Feature Elimination analysis. }
+\label{fig:rfe}
+\includegraphics[width=\textwidth]{fig-rfe.pdf}
+\end{figure}
+
+Using Recursive Feature Elimination \cite{guyon2002gene}, we next evaluate the
+usefulness of all fifteen standard and seven additional ethnicity features for learning
+the linkage function. The analysis consists in using the baseline algorithm
+first using all twenty two features, to determine the least discriminative from feature
+importances \cite{louppe2013understanding}, and then re-learn the baseline
+using all but that one feature. That process is repeated recursively until
+eventually only one feature remains. Results are presented in
+Figure~\ref{fig:rfe} for one of the three folds, starting from the far right with
+the baseline and \textit{Second given name} being the least important feature,
+and ending on the left with all features eliminated but \textit{Chinese}. As
+the figure illustrates, the most important features are ethnic-based features
+(\textit{Chinese}, \textit{Other Asian}, \textit{Black}) along with
+\textit{Co-authors}, \textit{Affiliation} and \textit{Full name}. Adding the remaining
+other features only brings marginal improvements, with \textit{Journal},
+\textit{Abstract}, \textit{Collaborations}, \textit{References}, \textit{Given
+name initial} and \textit{Second given name} being almost insignificant.
+Overall, these results highlight the added value of the proposed ethnicity
+features.
+Their duality in modeling both the similarity between author names
+and their origins make them very strong predictors for author disambiguation.
+The results also corroborate those from \cite{kang2009co} or \cite{ferreira2010effective}, who
+found that the similarity between co-authors was a highly discriminative
+feature.
+If computational complexity is a concern, this analysis also
+shows how decent performance can be achieved using only a very
+small set of features, as also observed in
+\cite{treeratpituk2009disambiguating} or \cite{levin2012citation}.
 
 \textit{Semi-supervised clustering.} The last part of our experiment concerns
 the study of agglomerative clustering and the best way to find a cut-off
@@ -1198,7 +1234,7 @@ first clearly indicate that average linkage is significantly better than
 both single and complete linkage.
 
 Clustering together all signatures from the same block is the least effective
-strategy ($0.8977$), which is a not bad accuracy, given the
+strategy ($0.9409$), but yields anyhow surprisingly decent accuracy, given the
 fact it requires almost no computation (\ie, both learning a linkage function
 and running agglomerative clustering can be skipped -- only the blocking
 function is needed to group signatures). In particular, this result reveals
@@ -1207,7 +1243,7 @@ data we extracted, but may in the future, with the rise of non-Western
 researchers, be an underestimate of the ambiguous cases.} and that only a small
 fraction of them requires advanced disambiguation procedures. On the other
 hand, both global and block cut thresholding strategies give very good results,
-with a slight advantage for block cuts ($0.9832$ versus $0.9842$), as expected.
+with a slight advantage for block cuts ($0.9814$ versus $0.9830$), as expected.
 In case ${\cal S}^\prime_b$ is empty (\eg, because it corresponds to a young
 researcher at the beginning of his career), this therefore suggests that either using
 a cut-off threshold learned globally from the known data or using SFI would in general give
@@ -1217,12 +1253,15 @@ known.Trying out 3 clustering methods, the results show that \textit {average li
 \textit{Combined best settings.} When all best settings are combined (\ie,
 Blocking = NYSIIS, Name normalization, Classifier = Random Forests, Training
 pairs = blocked and balanced, Clustering = Average linkage, Block cuts),
-performance reaches $0.9879$, \ie, the best of all reported results. In particular,
+performance reaches $0.9862$, \ie, the best of all reported results. In particular,
 this combination exhibits both the high recall of phonetic blocking based on the NYSIIS algorithm
 and the high precision of Random Forests.
 
 
-\section{Conclusion}
+
+% Conclusions =================================================================
+
+\section{Conclusions}
 \label{conclusions}
 
 In this work, we have revisited and validated the general author disambiguation
@@ -1235,7 +1274,9 @@ signatures. Making use of a distinctively large dataset of more than 1 million
 crowdsourced annotations, we experimentally study all three components and
 propose further improvements. With regards to blocking, we suggest to use
 phonetization of author names to increase recall while maintaining low
-computational complexity. For the linkage function, we mainly applied typical text-based feature extraction. Finally, we explore semi-supervised cut-off
+computational complexity. For the linkage function, we introduce
+ethnicity-sensitive features for the automatic tailoring of disambiguation to non-Western
+author names whenever necessary. Finally, we explore semi-supervised cut-off
 threshold strategies for agglomerative clustering. For all three components,
 experiments show that our refinements all yield significantly better author
 disambiguation accuracy.
@@ -1245,7 +1286,13 @@ blocking, one of the open challenges is to manage signatures with inconsistent
 surnames or inconsistent first given names (cases 4 and 5, as described in
 Section~\ref{methods:blocking}) while maintaining blocks to a tractable size.
 As phonetic algorithms are not yet perfect, another direction  for further work is the design of better
-phonetization functions, tailored for author disambiguation. For the linkage function.
+phonetization functions, tailored for author disambiguation. For the linkage function,
+the good results of the proposed features pave the way for further research  in
+ethnicity-sensitive author disambiguation. The automatic fitting of the
+pipeline to cultures and ethnic groups for which standard author disambiguation
+is known to be less efficient (\eg, Chinese authors with many homonyms)  indeed
+constitutes a direction of research with great potential benefits for the
+concerned scientific communities.
 
 As part of this study, we also publicly release the annotated data extracted
 from the \emph{INSPIRE} platform, on which our experiments are based.
@@ -1253,9 +1300,6 @@ To the best of our knowledge, data of this size and coverage is the first to be
 available in author disambiguation research. By releasing the data publicly,
 we hope to provide the basis for further research on author disambiguation
 and related topics.
-
-
-
 
 % conference papers do not normally have an appendix
 
@@ -1265,9 +1309,6 @@ and related topics.
 
 
 %The authors would like to thank...
-
-
-
 
 
 % trigger a \newpage just before the given reference
@@ -1304,8 +1345,6 @@ and related topics.
 
 %\end{thebibliography}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 % that's all folks
 \end{document}

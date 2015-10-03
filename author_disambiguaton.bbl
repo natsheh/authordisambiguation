@@ -226,4 +226,14 @@ A.~Gentil-Beccot, S.~Mele, A.~Holtkamp, H.~B. O'Connell, and T.~C. Brooks,
   Society for Information Science and Technology}, vol.~60, no.~1, pp.
   150--160, 2009.
 
+\bibitem{guyon2002gene}
+I.~Guyon, J.~Weston, S.~Barnhill, and V.~Vapnik, ``Gene selection for cancer
+  classification using support vector machines,'' \emph{Machine learning},
+  vol.~46, no. 1-3, pp. 389--422, 2002.
+
+\bibitem{louppe2013understanding}
+G.~Louppe, L.~Wehenkel, A.~Sutera, and P.~Geurts, ``Understanding variable
+  importances in forests of randomized trees,'' in \emph{Advances in Neural
+  Information Processing Systems}, 2013, pp. 431--439.
+
 \end{thebibliography}
