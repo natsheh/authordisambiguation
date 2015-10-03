@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.12)  1 OCT 2015 17:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.12)  3 OCT 2015 08:32
 entering extended mode
 **author_disambiguaton.tex
 (C:\Users\hussein\Documents\authordisambiguation\author_disambiguaton.tex
@@ -345,146 +345,46 @@ Underfull \hbox (badness 2735) in paragraph at lines 417--438
 []\OT1/ptm/b/it/9 Abstract\OT1/ptm/b/n/9 ---Author name dis-am-bigua-tion in bib-li-o-graphic
  []
 
-
-LaTeX Warning: Citation `strotmann2012author' on page 1 undefined on input line 475.
-
-
-LaTeX Warning: Citation `newman2001structure' on page 1 undefined on input line 476.
-
-
-LaTeX Warning: Citation `liu2014author' on page 1 undefined on input line 479.
-
-
-LaTeX Warning: Citation `smalheiser2009author' on page 1 undefined on input line 598.
-
-
-LaTeX Warning: Citation `ferreira2012brief' on page 1 undefined on input line 598.
-
-
-LaTeX Warning: Citation `levin2012citation' on page 1 undefined on input line 598.
-
-
-LaTeX Warning: Citation `culotta2007author' on page 1 undefined on input line 608.
-
-
-LaTeX Warning: Citation `treeratpituk2009disambiguating' on page 1 undefined on input line 608.
-
-
-LaTeX Warning: Citation `tran2014author' on page 1 undefined on input line 608.
-
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-
-LaTeX Warning: Citation `malin2005unsupervised' on page 2 undefined on input line 613.
-
-
-LaTeX Warning: Citation `song2007efficient' on page 2 undefined on input line 613.
-
-
-LaTeX Warning: Citation `soler2007separating' on page 2 undefined on input line 613.
-
-
-LaTeX Warning: Citation `kang2009co' on page 2 undefined on input line 613.
-
-
-LaTeX Warning: Citation `schulz2014exploiting' on page 2 undefined on input line 613.
-
-
-LaTeX Warning: Citation `ferreira2010effective' on page 2 undefined on input line 619.
-
-
-LaTeX Warning: Citation `torvik2009author' on page 2 undefined on input line 619.
-
-
-LaTeX Warning: Citation `levin2012citation' on page 2 undefined on input line 619.
-
-
-LaTeX Warning: Citation `levin2012citation' on page 2 undefined on input line 624.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 652.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+LaTeX Font Info:    Try loading font information for U+msa on input line 655.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 652.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<fig-pub-to-signature.pdf, id=61, 553.56813pt x 155.9155pt>
-File: fig-pub-to-signature.pdf Graphic file (type pdf)
- <use fig-pub-to-signature.pdf>
-Package pdftex.def Info: fig-pub-to-signature.pdf used on input line 663.
-(pdftex.def)             Requested size: 253.04987pt x 71.27234pt.
+LaTeX Font Info:    Try loading font information for U+msb on input line 655.
 
-<fig-workflow.pdf, id=64, 484.47699pt x 190.54486pt>
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) <fig-pub-to-signature.pdf, id=98, 553.56813pt x 155.9155pt>
+File: fig-pub-to-signature.pdf Graphic file (type pdf)
+
+<use fig-pub-to-signature.pdf>
+Package pdftex.def Info: fig-pub-to-signature.pdf used on input line 666.
+(pdftex.def)             Requested size: 253.04987pt x 71.27234pt.
+ <fig-workflow.pdf, id=101, 484.47699pt x 190.54486pt>
 File: fig-workflow.pdf Graphic file (type pdf)
  <use fig-workflow.pdf>
-Package pdftex.def Info: fig-workflow.pdf used on input line 698.
+Package pdftex.def Info: fig-workflow.pdf used on input line 701.
 (pdftex.def)             Requested size: 253.04987pt x 99.52582pt.
-
-
-LaTeX Warning: Citation `fellegi69' on page 2 undefined on input line 711.
-
-[2 <C:/Users/hussein/Documents/authordisambiguation/fig-pub-to-signature.pdf> <C:/Users/hussein/Documents/authordisambig
-uation/fig-workflow.pdf>]
-
-LaTeX Warning: Citation `doublemetaphone' on page 3 undefined on input line 747.
-
-
-LaTeX Warning: Citation `nysiis' on page 3 undefined on input line 747.
-
-
-LaTeX Warning: Citation `Soundex' on page 3 undefined on input line 748.
-
-
-LaTeX Warning: Citation `breiman2001random' on page 3 undefined on input line 777.
-
-
-LaTeX Warning: Citation `friedman2001greedy' on page 3 undefined on input line 778.
-
-
-LaTeX Warning: Citation `fan2008liblinear' on page 3 undefined on input line 779.
-
-
-LaTeX Warning: Citation `treeratpituk2009disambiguating' on page 3 undefined on input line 786.
-
-
-LaTeX Warning: Citation `lange2011frequency' on page 3 undefined on input line 847.
-
-[3]
-
-LaTeX Warning: Citation `ward1963hierarchical' on page 4 undefined on input line 862.
-
-<fig-cuts.pdf, id=111, 483.138pt x 142.86876pt>
+ [2 <C:/Users/hussein/Documents/authordisambiguation/fig-pub-to-signature.pdf> <C:/Users/hussein/Documents/authordisambi
+guation/fig-workflow.pdf>] [3] <fig-cuts.pdf, id=186, 483.138pt x 142.86876pt>
 File: fig-cuts.pdf Graphic file (type pdf)
  <use fig-cuts.pdf>
-Package pdftex.def Info: fig-cuts.pdf used on input line 894.
+Package pdftex.def Info: fig-cuts.pdf used on input line 925.
 (pdftex.def)             Requested size: 253.04987pt x 74.83063pt.
-
-
-LaTeX Warning: Citation `gentil2009information' on page 4 undefined on input line 918.
-
-[4 <C:/Users/hussein/Documents/authordisambiguation/fig-cuts.pdf>]
-Underfull \hbox (badness 5475) in paragraph at lines 1023--1025
+ [4 <C:/Users/hussein/Documents/authordisambiguation/fig-cuts.pdf>]
+Underfull \hbox (badness 5475) in paragraph at lines 1071--1073
 []\OT1/ptm/m/n/10 Clustering: ag-glom-er-a-tive clus-ter-ing us-ing av-er-
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 1023--1025
+Underfull \hbox (badness 1895) in paragraph at lines 1071--1073
 \OT1/ptm/m/n/10 age link-age and block cuts found to max-i-mize
  []
 
-
-LaTeX Warning: Citation `torvik2009author' on page 5 undefined on input line 1045.
-
-
-LaTeX Warning: Citation `treeratpituk2009disambiguating' on page 5 undefined on input line 1078.
-
-
-LaTeX Warning: Citation `levin2012citation' on page 5 undefined on input line 1080.
-
-[5] (C:\Users\hussein\Documents\authordisambiguation\author_disambiguaton.bbl)
+[5] (C:\Users\hussein\Documents\authordisambiguation\author_disambiguaton.bbl [6])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -496,37 +396,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1215.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1215.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1263.
+[7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1263.
  (C:\Users\hussein\Documents\authordisambiguation\author_disambiguaton.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1215.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1215.
-
-
-Package rerunfilecheck Warning: File `author_disambiguaton.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `author_disambiguaton.out':
-(rerunfilecheck)             Before: 1C7325D88D221B49DCAF610D4178E9BC;659
-(rerunfilecheck)             After:  F9BAEBE438614EE5447778E091FED5B6;707.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1215.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1263.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1263.
+Package rerunfilecheck Info: File `author_disambiguaton.out' has not changed.
+(rerunfilecheck)             Checksum: E1D933EEAFB1F7429B2966E7C09A5B19;758.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1263.
  ) 
 Here is how much of TeX's memory you used:
- 6463 strings out of 493921
- 97413 string characters out of 3147276
- 191090 words of memory out of 3000000
- 9634 multiletter control sequences out of 15000+200000
- 48991 words of font info for 94 fonts, out of 3000000 for 9000
+ 6488 strings out of 493921
+ 97816 string characters out of 3147276
+ 191521 words of memory out of 3000000
+ 9647 multiletter control sequences out of 15000+200000
+ 47884 words of font info for 93 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 29i,11n,30p,407b,401s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,30p,407b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fil
@@ -539,9 +426,9 @@ cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.p
 pe1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on author_disambiguaton.pdf (6 pages, 274274 bytes).
+Output written on author_disambiguaton.pdf (7 pages, 290722 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 120 words of extra memory for PDF output out of 10000 (max. 10000000)
 

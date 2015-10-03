@@ -54,6 +54,18 @@ M.~Levin, S.~Krawczyk, S.~Bethard, and D.~Jurafsky, ``Citation-based
   American Society for Information Science and Technology}, vol.~63, no.~5, pp.
   1030--1047, 2012.
 
+\bibitem{han2004two}
+H.~Han, L.~Giles, H.~Zha, C.~Li, and K.~Tsioutsiouliklis, ``Two supervised
+  learning approaches for name disambiguation in author citations,'' in
+  \emph{Digital Libraries, 2004. Proceedings of the 2004 Joint ACM/IEEE
+  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2004, pp.
+  296--305.
+
+\bibitem{huang2006efficient}
+J.~Huang, S.~Ertekin, and C.~L. Giles, ``Efficient name disambiguation for
+  large-scale databases,'' in \emph{Knowledge Discovery in Databases: PKDD
+  2006}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2006, pp. 536--544.
+
 \bibitem{culotta2007author}
 A.~Culotta, P.~Kanani, R.~Hall, M.~Wick, and A.~McCallum, ``Author
   disambiguation using error-driven machine learning with a ranking loss
@@ -77,6 +89,12 @@ B.~Malin, ``Unsupervised name disambiguation via social network similarity,''
   in \emph{Workshop on link analysis, counterterrorism, and security}, vol.
   1401, 2005, pp. 93--102.
 
+\bibitem{mcrae2006also}
+D.~M. McRae-Spencer and N.~R. Shadbolt, ``Also by the same author:
+  Aktiveauthor, a citation graph approach to name disambiguation,'' in
+  \emph{Proceedings of the 6th ACM/IEEE-CS joint conference on Digital
+  libraries}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2006, pp. 53--54.
+
 \bibitem{song2007efficient}
 Y.~Song, J.~Huang, I.~G. Councill, J.~Li, and C.~L. Giles, ``Efficient
   topic-based unsupervised name disambiguation,'' in \emph{Proceedings of the
@@ -91,6 +109,11 @@ J.~Soler, ``Separating the articles of authors with the same name,''
 I.-S. Kang, S.-H. Na, S.~Lee, H.~Jung, P.~Kim, W.-K. Sung, and J.-H. Lee, ``On
   co-authorship for author disambiguation,'' \emph{Information Processing \&
   Management}, vol.~45, no.~1, pp. 84--97, 2009.
+
+\bibitem{fan2011graph}
+X.~Fan, J.~Wang, X.~Pu, L.~Zhou, and B.~Lv, ``On graph-based name
+  disambiguation,'' \emph{Journal of Data and Information Quality (JDIQ)},
+  vol.~2, no.~2, p.~10, 2011.
 
 \bibitem{schulz2014exploiting}
 C.~Schulz, A.~Mazloumian, A.~M. Petersen, O.~Penner, and D.~Helbing,
@@ -144,6 +167,23 @@ R.-E. Fan, K.-W. Chang, C.-J. Hsieh, X.-R. Wang, and C.-J. Lin, ``Liblinear: A
   library for large linear classification,'' \emph{The Journal of Machine
   Learning Research}, vol.~9, pp. 1871--1874, 2008.
 
+\bibitem{treeratpituk2012name}
+P.~Treeratpituk and C.~L. Giles, ``Name-ethnicity classification and
+  ethnicity-sensitive name matching.'' in \emph{AAAI}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Citeseer, 2012.
+
+\bibitem{chin2014effective}
+W.-S. Chin, Y.~Zhuang, Y.-C. Juan, F.~Wu, H.-Y. Tung, T.~Yu, J.-P. Wang, C.-X.
+  Chang, C.-P. Yang, W.-C. Chang \emph{et~al.}, ``Effective string processing
+  and matching for author disambiguation,'' \emph{The Journal of Machine
+  Learning Research}, vol.~15, no.~1, pp. 3037--3064, 2014.
+
+\bibitem{rugglesintegrated}
+S.~Ruggles, M.~Sobek, C.~A. Fitch, P.~K. Hall, and C.~Ronnander,
+  \emph{Integrated public use microdata series}.\hskip 1em plus 0.5em minus
+  0.4em\relax Historical Census Projects, Department of History, University of
+  Minnesota, 2008.
+
 \bibitem{lange2011frequency}
 D.~Lange and F.~Naumann, ``Frequency-aware similarity measures: why arnold
   schwarzenegger is always a duplicate,'' in \emph{Proceedings of the 20th ACM
@@ -154,6 +194,30 @@ D.~Lange and F.~Naumann, ``Frequency-aware similarity measures: why arnold
 J.~H. Ward~Jr, ``Hierarchical grouping to optimize an objective function,''
   \emph{Journal of the American statistical association}, vol.~58, no. 301, pp.
   236--244, 1963.
+
+\bibitem{scikitlearn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay, ``Scikit-learn:
+  Machine learning in {P}ython,'' \emph{Journal of Machine Learning Research},
+  vol.~12, pp. 2825--2830, 2011.
+
+\bibitem{scipy}
+\BIBentryALTinterwordspacing
+E.~Jones, T.~Oliphant, P.~Peterson \emph{et~al.}, ``{SciPy}: Open source
+  scientific tools for {Python},'' 2001--, [Online; accessed 2015-08-10].
+  [Online]. Available: \url{http://www.scipy.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{scikitlearnAPI}
+\BIBentryALTinterwordspacing
+L.~Buitinck, G.~Louppe, M.~Blondel, F.~Pedregosa, A.~Mueller, O.~Grisel,
+  V.~Niculae, P.~Prettenhofer, A.~Gramfort, J.~Grobler, R.~Layton,
+  J.~VanderPlas, A.~Joly, B.~Holt, and G.~Varoquaux, ``{API} design for machine
+  learning software: experiences from the scikit-learn project,'' \emph{CoRR},
+  vol. abs/1309.0238, 2013. [Online]. Available:
+  \url{http://arxiv.org/abs/1309.0238}
+\BIBentrySTDinterwordspacing
 
 \bibitem{gentil2009information}
 A.~Gentil-Beccot, S.~Mele, A.~Holtkamp, H.~B. O'Connell, and T.~C. Brooks,

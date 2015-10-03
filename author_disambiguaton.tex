@@ -355,7 +355,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Author Name Disambiguation using Semi-Supervised Learning and Phonetic-based Blocking Strategy}
+\title{Ethnicity sensitive author disambiguation using semi-supervised learning}
 
 
 % author names and affiliations
@@ -500,9 +500,12 @@ commonly used in existing solutions is an effective approach for author disambig
 Additionally, we propose alternative strategies for blocking based on the
 phonetization of author names to increase recall.
 
+We also propose ethnicity-sensitive features for learning a linkage function,
+thereby tailoring author disambiguation to non-Western author names whenever necessary.
+
 The remainder of this report is structured as follows. In Section~\ref{related-works},
 we briefly review machine learning solutions for author disambiguation.
-The components of our method are then defined in Section~\ref{methods}. Experiments
+The components of our method are then defined in Section~\ref{methods} and its implementation described in Section~\ref{implementation}.Experiments
 are carried out in Section~\ref{experiments}, where we explore and validate
 features for the supervised learning of a linkage function and compare
 strategies for the semi-supervised clustering of publications.
@@ -605,12 +608,12 @@ amount of data available, the way the linkage function is learned or defined, or
 clustering procedure used to group publications.
 Methods relying on supervised learning usually make use of a small set of hand-labeled pairs
 of publications identified as being either from the same or different authors to automatically learn a linkage
-function between publications \cite{culotta2007author,treeratpituk2009disambiguating,tran2014author}.
+function between publications \cite{han2004two,huang2006efficient, culotta2007author,treeratpituk2009disambiguating,tran2014author}.
 
 Training data is usually not easily available, therefore unsupervised approaches propose
 the use of domain-specific, manually designed, linkage functions tailored towards author
-disambiguation \cite{malin2005unsupervised, song2007efficient,
-soler2007separating, kang2009co, schulz2014exploiting}.
+disambiguation \cite{malin2005unsupervised,mcrae2006also,song2007efficient,
+soler2007separating, kang2009co,fan2011graph,schulz2014exploiting}.
 These approaches have the advantage of not requiring hand-labeled data, but generally do
 not perform as well as supervised approaches.
 To reconcile both worlds, semi-supervised methods make use of small, manually verified, clusters of
@@ -796,6 +799,26 @@ When not specified, \emph{TF-IDF} vectors are otherwise computed from words.}.
 Similarly, the \textit{Year difference} feature measures the absolute difference between the publication date of the
 articles to which the two signatures respectively belong.
 
+Author names from different cultures, origins or ethnic groups are likely to be
+disambiguated using different strategies (\eg, pairs of signatures with French
+author names versus pairs of signatures with Chinese author names) \cite{treeratpituk2012name, chin2014effective}.
+To support our disambiguation algorithm, we added seven features to our feature set, with each
+evaluating the degree of belonging of both signatures to an ethnic group,
+as reported in the second half of Table~\ref{table:features}.
+
+More specifically, using census data extracted from \cite{rugglesintegrated},
+we build a support vector machine classifier (using a linear kernel and
+one-versus-all classification scheme) for mapping the
+ $(1,5)$-TF-IDF representation of an author name to one of the seven ethnic groups. Given a
+pair of signatures $(s_1, s_2)$, the proposed ethnicity features are each
+computed as the estimated probability of $s_1$ belonging to the corresponding
+ethnic group, multiplied by the estimated probability of $s_2$ belonging to the
+same group. In doing so, the expectation is for the linkage function to become
+sensitive to the actual origin of the authors depending on the values of these
+features. Indirectly, let us also note that these features hold discriminative
+power since if author names are predicted to belong to different ethnic groups,
+then they are also likely to correspond to distinct people.
+
 \begin{table}
 \caption{Input features for learning a linkage function}
 \label{table:features}
@@ -820,6 +843,14 @@ articles to which the two signatures respectively belong.
   References & Cosine similarity of TF-IDF\\
   Subject & Cosine similarity of TF-IDF\\
   Year difference & Absolute difference\\
+  \hline
+	 White & Product of estimated probabilities\\
+  Black & Product of estimated probabilities\\
+  American Indian or Alaska Native & Product of estimated probabilities\\
+  Chinese & Product of estimated probabilities\\
+  Japanese & Product of estimated probabilities\\
+  Other Asian or Pacific Islander & Product of estimated probabilities\\
+  Others & Product of estimated probabilities\\
   \hline
 \end{tabular}
 \end{table}
@@ -904,7 +935,24 @@ From these, we evaluate the following semi-supervised cut-off strategies, as ill
 % \subsection{Matching}
 % general description in a real system
 % GL: out of scope, let us mention that in Conclusions instead
+% Implementation ======================================================
 
+\section{Implementation}
+\label{implementation}
+
+As part of this work, we developed a stand-alone application for author
+disambiguation, publicly available online\footnote{\url{https://github.com/glouppe/beard}} for free reuse
+or study.
+Our implementation builds upon the Python scientific stack, making
+use of the Scikit-Learn library \cite{scikitlearn} for the supervised learning
+of a linkage function and of SciPy \cite{scipy} for clustering.
+All components of the disambiguation pipeline have been designed to follow the
+Scikit-Learn API \cite{scikitlearnAPI}, making them easy to maintain,
+understand and reuse.
+Our implementation is made to be efficient, exploiting parallelization when available, and ready for production environments.
+It is also designed to be runnable
+in an incremental fashion, by enabling disambiguation only on specified blocks if desired,
+instead of having to run the disambiguation process on the whole signature set.
 
 % Results and discussion ======================================================
 
