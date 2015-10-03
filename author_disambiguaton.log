@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.12)  3 OCT 2015 08:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.3.12)  3 OCT 2015 08:53
 entering extended mode
 **author_disambiguaton.tex
 (C:\Users\hussein\Documents\authordisambiguation\author_disambiguaton.tex
@@ -375,12 +375,12 @@ File: fig-cuts.pdf Graphic file (type pdf)
 Package pdftex.def Info: fig-cuts.pdf used on input line 925.
 (pdftex.def)             Requested size: 253.04987pt x 74.83063pt.
  [4 <C:/Users/hussein/Documents/authordisambiguation/fig-cuts.pdf>]
-Underfull \hbox (badness 5475) in paragraph at lines 1071--1073
+Underfull \hbox (badness 5475) in paragraph at lines 1119--1121
 []\OT1/ptm/m/n/10 Clustering: ag-glom-er-a-tive clus-ter-ing us-ing av-er-
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 1071--1073
+Underfull \hbox (badness 1895) in paragraph at lines 1119--1121
 \OT1/ptm/m/n/10 age link-age and block cuts found to max-i-mize
  []
 
@@ -396,24 +396,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1263.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1311.
 [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1263.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1311.
  (C:\Users\hussein\Documents\authordisambiguation\author_disambiguaton.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1263.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1263.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1311.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1311.
 Package rerunfilecheck Info: File `author_disambiguaton.out' has not changed.
 (rerunfilecheck)             Checksum: E1D933EEAFB1F7429B2966E7C09A5B19;758.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1263.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1311.
  ) 
 Here is how much of TeX's memory you used:
- 6488 strings out of 493921
- 97816 string characters out of 3147276
- 191521 words of memory out of 3000000
- 9647 multiletter control sequences out of 15000+200000
+ 6493 strings out of 493921
+ 97876 string characters out of 3147276
+ 196615 words of memory out of 3000000
+ 9648 multiletter control sequences out of 15000+200000
  47884 words of font info for 93 fonts, out of 3000000 for 9000
  844 hyphenation exceptions out of 8191
- 29i,11n,30p,407b,460s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,30p,407b,462s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Fil
@@ -426,9 +426,9 @@ cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.p
 pe1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on author_disambiguaton.pdf (7 pages, 290722 bytes).
+Output written on author_disambiguaton.pdf (7 pages, 293942 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
  120 words of extra memory for PDF output out of 10000 (max. 10000000)
 

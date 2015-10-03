@@ -844,7 +844,7 @@ then they are also likely to correspond to distinct people.
   Subject & Cosine similarity of TF-IDF\\
   Year difference & Absolute difference\\
   \hline
-	 White & Product of estimated probabilities\\
+	White & Product of estimated probabilities\\
   Black & Product of estimated probabilities\\
   American Indian or Alaska Native & Product of estimated probabilities\\
   Chinese & Product of estimated probabilities\\
@@ -922,7 +922,7 @@ From these, we evaluate the following semi-supervised cut-off strategies, as ill
 
 \begin{figure}
 \centering
-	\includegraphics [width=\linewidth] {fig-cuts}
+\includegraphics[width=\linewidth]{fig-cuts}
 \caption{Semi-supervised cut-off strategies to form flat clusters of signatures.}
 \label{fig:cuts}
 \end{figure}
@@ -1000,15 +1000,16 @@ C}_\text{test}^\prime$ are those used for testing.
 
 As commonly performed in author disambiguation research,
 we evaluate the predicted clusters over testing data  ${\cal C}_\text{test}^\prime$,
-using pairwise precision, recall
+using both B3 and pairwise precision, recall
 and F-measure, as defined below:
-
 \begin{align}
+P_\text{B3}({\cal C}, \widehat{\cal C}, {\cal S}) &= \frac{1}{|{\cal S}|} \sum_{s \in {\cal S}} \frac{|c(s) \cap \widehat{c}(s)|}{|\widehat{c}(s)|} \\
+R_\text{B3}({\cal C}, \widehat{\cal C}, {\cal S}) &= \frac{1}{|{\cal S}|} \sum_{s \in {\cal S}} \frac{|c(s) \cap \widehat{c}(s)|}{|c(s)|}\\
+F_\text{B3}({\cal C}, \widehat{\cal C}, {\cal S}) &= \frac{2 P_\text{B3}({\cal C}, \widehat{\cal C}, {\cal S}) R_\text{B3}({\cal C}, \widehat{\cal C}, {\cal S})}{P_\text{B3}({\cal C}, \widehat{\cal C}, {\cal S}) + P_\text{B3}({\cal C}, \widehat{\cal C}, {\cal S})}\\
 P_\text{pairwise}({\cal C}, \widehat{\cal C}) &= \frac{|p({\cal C}) \cap p(\widehat{\cal C})|}{|p(\widehat{\cal C})|}\\
 R_\text{pairwise}({\cal C}, \widehat{\cal C}) &= \frac{|p({\cal C}) \cap p(\widehat{\cal C})|}{|p({\cal C})|}\\
 F_\text{pairwise}({\cal C}, \widehat{\cal C}) &= \frac{2 P_\text{pairwise}({\cal C}, \widehat{\cal C}) R_\text{pairwise}({\cal C}, \widehat{\cal C})}{P_\text{pairwise}({\cal C}, \widehat{\cal C}) + R_\text{pairwise}({\cal C}, \widehat{\cal C})}
 \end{align}
-
 and where $c(s)$ (resp. $\widehat{c}(s)$) is the cluster $c \in {\cal C}$ such that
 $s \in c$ (resp. the cluster $\widehat{c} \in \widehat{\cal C}$ such that $s
 \in \widehat{c}$), and where $p({\cal C}) = \cup_{c \in {\cal C}} \{ (s_1, s_2)
@@ -1018,15 +1019,62 @@ Precision evaluates whether signatures are grouped only with signatures from the
 while recall measures the extent to which all signatures from the same true clusters are
 effectively grouped together.
 The F-measure is the harmonic mean between these two quantities.
+In the analysis below, we rely primarily on the B3 F-measure for discussing results, as the pairwise variant
+tends to favor large clusters (because the number of pairs is quadratic with the cluster size),
+hence unfairly giving preference to authors with many publications.
+By contrast, the B3 F-measure weights clusters linearly with respect to their size.
+General conclusions drawn below remain however consistent for pairwise F.
 
 \subsection{Results and discussion}
 
 \begin{table}
-\caption{Average precision, recall and f-measure scores on test folds.}
+\caption{Average precision, recall and B3 f-measure scores on test folds.}
 \label{table:results}
 \centering
 \begin{tabular}{|l|c c c|}
   \hline
+                       & \multicolumn{3}{|c|}{\textbf{B3}} \\
+  \textbf{Description} & $P$ & $R$ & $F$ \\
+  \hline
+  \hline
+Baseline & 0.9901 & 0.9760 & 0.9830  \\
+\hline
+Blocking = SFI & 0.9901 & 0.9760 & 0.9830  \\
+Blocking = Double metaphone & 0.9856 & 0.9827 & 0.9841  \\
+Blocking = NYSIIS & 0.9875 & 0.9826 & \textbf{0.9850} \\
+Blocking = Soundex & 0.9886 & 0.9745 & 0.9815 \\
+\hline
+No name normalization & 0.9887 & 0.9697 & 0.9791  \\
+Name normalization & 0.9901 & 0.9760 & \textbf{0.9830}  \\
+\hline
+Classifier = GBRT & 0.9901 & 0.9760 & 0.9830  \\
+Classifier = Random Forests & 0.9909 & 0.9783 & \textbf{0.9846}  \\
+Classifier = Linear Regression & 0.9749 & 0.9584 & 0.9666  \\
+\hline
+Training pairs = Non-blocked, uniform & 0.9793 & 0.9630 & 0.9711  \\
+Training pairs = Blocked, uniform & 0.9854 & 0.9720 & 0.9786  \\
+Training pairs = Blocked, balanced & 0.9901 & 0.9760 & \textbf{0.9830}  \\
+\hline
+Clustering = Average linkage & 0.9901 & 0.9760 & \textbf{0.9830}  \\
+Clustering = Single linkage & 0.9741 & 0.9603 & 0.9671  \\
+Clustering = Complete linkage & 0.9862 & 0.9709 & 0.9785  \\
+\hline
+No cut & 0.9024 & 0.9828 & 0.9409  \\
+Global cut & 0.9892 & 0.9737 & 0.9814  \\
+Block cut & 0.9901 & 0.9760 & \textbf{0.9830}  \\
+\hline
+Combined best settings & 0.9897 & 0.9827 & \textbf{0.9862}  \\
+  \hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\caption{Average precision, recall and pairwise f-measure scores on test folds.}
+\label{table:resultspw}
+\centering
+\begin{tabular}{|l|c c c|}
+  \hline
+                       & \multicolumn{3}{|c|}{\textbf{Pairwise}} \\
   \textbf{Description} & $P$ & $R$ & $F$\\
   \hline
   \hline
